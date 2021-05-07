@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.rbierly.project1</groupId>
+  <artifactId>project-1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Project One</name>
+  <properties>
+	<maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>software.amazon.awssdk</groupId>
+        <artifactId>bom</artifactId>
+        <version>2.16.43</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+  	<!-- https://mvnrepository.com/artifact/io.javalin/javalin -->
+	<dependency>
+	    <groupId>io.javalin</groupId>
+	    <artifactId>javalin</artifactId>
+	    <version>3.12.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.12</version>
+	    <scope>test</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+	<dependency>
+	    <groupId>org.mockito</groupId>
+	    <artifactId>mockito-core</artifactId>
+	    <version>3.7.7</version>
+	    <scope>test</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>2.13.3</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.datastax.oss/java-driver-core -->
+	<dependency>
+	    <groupId>com.datastax.oss</groupId>
+	    <artifactId>java-driver-core</artifactId>
+	    <version>4.11.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.cassandraunit/cassandra-unit 
+	<dependency>
+	    <groupId>org.cassandraunit</groupId>
+	    <artifactId>cassandra-unit</artifactId>
+	    <version>4.3.1.0</version>
+	    <scope>test</scope>
+	</dependency>
+	-->
+	<!-- AWS plugin for Cassandra authentication -->
+	<dependency>
+		<groupId>software.aws.mcs</groupId>
+		<artifactId>aws-sigv4-auth-cassandra-java-driver-plugin</artifactId>
+		<version>4.0.4</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-nop -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-nop</artifactId>
+	    <version>1.7.25</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-simple</artifactId>
+	    <version>1.7.30</version>
+	</dependency>
+	<dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>s3</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-email</artifactId> <!-- For sending emails -->
+        <version>1.4</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
